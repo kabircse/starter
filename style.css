@@ -409,36 +409,7 @@ nav a {
 .post-block {
     margin-bottom: 15px;
 	border-bottom-style: ridge;
-}.pagination {
-clear:both;
-padding:20px 0;
-position:relative;
-font-size:11px;
-line-height:13px;
 }
-
-.pagination span, .pagination a {
-display:block;
-float:left;
-margin: 2px 2px 2px 0;
-padding:6px 9px 5px 9px;
-text-decoration:none;
-width:auto;
-color:#fff;
-background: #555;
-}
-
-.pagination a:hover{
-color:#fff;
-background: #3279BB;
-}
-
-.pagination .current{
-padding:6px 9px 5px 9px;
-background: #3279BB;
-color:#fff;
-}
-
 
 /*.post-tag-text{
   margin-left: -7%;
@@ -485,6 +456,48 @@ color:#fff;
     margin-left: -28px;
 }
 
+/*For pagination, remove later*/
+.pagination {
+clear:both;
+padding:20px 0;
+position:relative;
+font-size:11px;
+line-height:13px;
+}
+.pagination span, .pagination a {
+display:block;
+float:left;
+margin: 2px 2px 2px 0;
+padding:6px 9px 5px 9px;
+text-decoration:none;
+width:auto;
+color:#fff;
+background: #555;
+}
+.pagination a:hover{
+color:#fff;
+background: #3279BB;
+}
+.pagination .current{
+padding:6px 9px 5px 9px;
+background: #3279BB;
+color:#fff;
+}
+
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+.footer {
+ margin-top: 60px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+}
 /*Common Style for all
 -----------------*/
 .m-5{
@@ -531,24 +544,4 @@ color:#fff;
 }
 .m-l-15{
   margin-left: 15px;
-}
-
-
-
-
-
-
-
-
-/* Sticky footer styles
--------------------------------------------------- */
-.footer {
- margin-top: 60px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  line-height: 60px; /* Vertically center the text there */
-  background-color: #f5f5f5;
 }

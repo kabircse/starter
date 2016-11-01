@@ -36,108 +36,71 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			<div class="tab-pane active" id="popular">
 				<div class="popular-posts">
 					<ul class="list-group">
-						<li class="list-group-item">
-							<span class="tag pull-sm-left"><img class="img sidebar-post-img" src="assets/images/thumb-sidebar/thumb-006.jpg" alt="Card image cap"></span>
-							<a class="text-info" href="#">Cras justo odio</a><br/>
-							<span>25 Comments</span>
-						</li>
-						<li class="list-group-item">
-							<span class="tag pull-sm-left"><img class="img sidebar-post-img" src="assets/images/thumb-sidebar/thumb-002.jpg" alt="Card image cap"></span>
-							<a class="text-info" href="#">Cras justo odio</a><br/>
-							<span>5 Comments</span>
-						</li>
-						<li class="list-group-item">
-							<span class="tag pull-sm-left"><img class="img sidebar-post-img" src="assets/images/thumb-sidebar/thumb-003.jpg" alt="Card image cap"></span>
-							<a class="text-info" href="#">Cras justo odio</a><br/>
-							<span>10 Comments</span>
-						</li>
-						<li class="list-group-item">
-							<span class="tag pull-sm-left"><img class="img sidebar-post-img" src="assets/images/thumb-sidebar/thumb-004.jpg" alt="Card image cap"></span>
-							<a class="text-info" href="#">Cras justo odio</a><br/>
-							<span>No Comment</span>
-						</li>
-						<li class="list-group-item">
-							<span class="tag pull-sm-left"><img class="img sidebar-post-img" src="assets/images/thumb-sidebar/thumb-005.jpg" alt="Card image cap"></span>
-							<a class="text-info" href="#">Cras justo odio</a><br/>
-							<span>20 Comments</span>
-						</li>
-						<li class="list-group-item">
-							<span class="tag pull-sm-left"><img class="img sidebar-post-img" src="assets/images/thumb-sidebar/thumb-002.jpg" alt="Card image cap"></span>
-							<a class="text-info" href="#">Cras justo odio</a><br/>
-							<span>8 Comments</span>
-						</li>
+						<?php
+							query_posts('meta_key=post_views_count&posts_per_page=5&orderby=meta_value_num&order=DESC');
+							if(have_posts()):
+								while (have_posts()):the_post()?>
+									<li class="list-group-item">
+											<span class="tag pull-sm-left">
+												<?php if(has_post_thumbnail()){?>
+												<?php the_post_thumbnail(array(50, 50),  array('class' => 'img sidebar-post-img' ));
+											  }else{
+													echo '<img width="50" height="50" src="'.get_template_directory_uri().'/assets/images/common/no-image.png" class="img-thumbnail wp-post-image" alt="01">';
+												}?>
+											</span>
+
+										<a class="text-info" href="<?php the_permalink(); ?>" alt="<?php the_title_attribute();?>" rel="bookmark"><?php the_title();?></a><br/>
+										<span><a href="<?php comments_link();?>"><?php comments_number( '0 Comments', '1 Comments', '% Comments' );?></a></span>
+									</li>
+									<?php
+								endwhile;
+							endif;
+							wp_reset_query();
+						?>
 					</ul>
 				</div>
 			</div>
 			<div class="tab-pane" id="recent">
-				<div class="popular-posts">
+				<div class="recent-posts">
 					<ul class="list-group">
-						<li class="list-group-item">
-							<span class="tag pull-sm-left"><img class="img sidebar-post-img" src="assets/images/thumb-sidebar/thumb-005.jpg" alt="Card image cap"></span>
-							<a class="text-info" href="#">Man is going to discovery</a><br/>
-							<span>2 Comments</span>
-						</li>
-						<li class="list-group-item">
-							<span class="tag pull-sm-left"><img class="img sidebar-post-img" src="assets/images/thumb-sidebar/thumb-004.jpg" alt="Card image cap"></span>
-							<a class="text-info" href="#">Science is your next friend</a><br/>
-							<span>6 Comments</span>
-						</li>
-						<li class="list-group-item">
-							<span class="tag pull-sm-left"><img class="img sidebar-post-img" src="assets/images/thumb-sidebar/thumb-006.jpg" alt="Card image cap"></span>
-							<a class="text-info" href="#">The moon spreads his bright at night</a><br/>
-							<span>120 Comments</span>
-						</li>
-						<li class="list-group-item">
-							<span class="tag pull-sm-left"><img class="img sidebar-post-img" src="assets/images/thumb-sidebar/thumb-002.jpg" alt="Card image cap"></span>
-							<a class="text-info" href="#">The water is an essential thins for man</a><br/>
-							<span>No Comment</span>
-						</li>
-						<li class="list-group-item">
-							<span class="tag pull-sm-left"><img class="img sidebar-post-img" src="assets/images/thumb-sidebar/thumb-004.jpg" alt="Card image cap"></span>
-							<a class="text-info" href="#">Global warming is increasing day by day</a><br/>
-							<span>12 Comments</span>
-						</li>
-						<li class="list-group-item">
-							<span class="tag pull-sm-left"><img class="img sidebar-post-img" src="assets/images/thumb-sidebar/thumb-005.jpg" alt="Card image cap"></span>
-							<a class="text-info" href="#">Computer technology is the biggest job market ever</a><br/>
-							<span>No Comments</span>
-						</li>
+						<?php
+							$args = array('numberposts' => 5 );
+							$recent_posts = wp_get_recent_posts($args);
+							foreach ($recent_posts as $post) {?>
+								<li class="list-group-item">
+									<span class="tag pull-sm-left">
+										<?php if(has_post_thumbnail()){?>
+										<?php echo get_the_post_thumbnail($post['ID'], array(50, 50),  array('class' => 'img sidebar-post-img' ));
+									}
+									else{
+										echo '<img width="50" height="50" src="'.get_template_directory_uri().'/assets/images/common/no-image.png" class="img-thumbnail wp-post-image" alt="01">';
+									}?>
+									</span>
+									<a class="text-info" href="<?php echo get_permalink($post['ID']);?>"><?php echo get_the_title($post['ID']); ?></a><br/>
+									<span><a href="<?php comments_link();?>"><?php comments_number( '0 Comments', '1 Comments', '% Comments' );?></a></span>
+								</li>
+							<?php
+						 }
+						?>
 					</ul>
 				</div>
 			</div>
 			<div class="tab-pane" id="comments">
 				<div class="popular-posts">
 					<ul class="list-group">
-						<li class="list-group-item">
-							<span class="tag pull-sm-left"><img class="img sidebar-post-img" src="assets/images/thumb-sidebar/thumb-006.jpg" alt="Card image cap"></span>
-							<a class="text-info" href="#">Cras justo odio</a><br/>
-							<span>2 Comments</span>
-						</li>
-						<li class="list-group-item">
-							<span class="tag pull-sm-left"><img class="img sidebar-post-img" src="assets/images/thumb-sidebar/thumb-004.jpg" alt="Card image cap"></span>
-							<a class="text-info" href="#">Cras justo odio</a><br/>
-							<span>15 Comments</span>
-						</li>
-						<li class="list-group-item">
-							<span class="tag pull-sm-left"><img class="img sidebar-post-img" src="assets/images/thumb-sidebar/thumb-005.jpg" alt="Card image cap"></span>
-							<a class="text-info" href="#">Cras justo odio</a><br/>
-							<span>1 Comments</span>
-						</li>
-						<li class="list-group-item">
-							<span class="tag pull-sm-left"><img class="img sidebar-post-img" src="assets/images/thumb-sidebar/thumb-006.jpg" alt="Card image cap"></span>
-							<a class="text-info" href="#">Cras justo odio</a><br/>
-							<span>No Comment</span>
-						</li>
-						<li class="list-group-item">
-							<span class="tag pull-sm-left"><img class="img sidebar-post-img" src="assets/images/thumb-sidebar/thumb-003.jpg" alt="Card image cap"></span>
-							<a class="text-info" href="#">Cras justo odio</a><br/>
-							<span>10 Comments</span>
-						</li>
-						<li class="list-group-item">
-							<span class="tag pull-sm-left"><img class="img sidebar-post-img" src="assets/images/thumb-sidebar/thumb-005.jpg" alt="Card image cap"></span>
-							<a class="text-info" href="#">Cras justo odio</a><br/>
-							<span>25 Comments</span>
-						</li>
+						<?php
+							$args = array('per_page' => 5 );
+							$recent_comments = get_comments($args);
+							foreach ($recent_comments as $comment) {?>
+								<li class="list-group-item">
+									<span class="tag pull-sm-left">
+										<img class="img sidebar-post-img img-circle" width="60" height="60" src="<?php echo get_avatar_url($comment);?>" alt="Avatar">
+									</span>
+									<?php echo $comment->comment_author;?>, <a class="text-info" href="<?php echo get_post_permalink($comment->comment_post_ID);?>"><?php echo get_the_title($comment->comment_post_ID,25);?></a><br/>
+									<span><?php echo comment_excerpt($comment->comment_ID);?></span>
+								</li>
+							<?php }
+						?>
 					</ul>
 				</div>
 			</div>

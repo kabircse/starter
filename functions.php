@@ -121,7 +121,7 @@ function starter_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'starter_scripts' );
 
-//pagination
+/*makign pagination*/
 function pagination($pages = '', $range = 4)
 {
      $showitems = ($range * 2)+1;
@@ -155,6 +155,28 @@ function pagination($pages = '', $range = 4)
          echo "</div>\n";
      }
 }
+/*
+ * Set post views count using post meta
+ */
+function setPostViews($postID) {
+    $countKey = 'post_views_count';
+    $count = get_post_meta($postID, $countKey, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $countKey);
+        add_post_meta($postID, $countKey, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $countKey, $count);
+    }
+}
+
+/*Excerpt length */
+function custom_excerpt_length( $length ) {
+    return 25;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
 /**
  * Implement the Custom Header feature.
  */

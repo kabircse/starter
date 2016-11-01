@@ -21,8 +21,13 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-3 col-xs-12 post-img">
-				<a  src="<?php the_permalink();?>" alt="<?php the_title_attribute();?>">
-					<?php the_post_thumbnail('medium',  array('class' => 'img-thumbnail' ));?>
+				<a src="<?php the_permalink();?>" alt="<?php the_title_attribute();?>">
+					<?php if(has_post_thumbnail()){?>
+						<?php the_post_thumbnail('medium',  array('class' => 'img-thumbnail' ));?>
+					<?php }
+						else
+							echo '<img src="'.get_template_directory_uri().'/assets/images/common/no-image.png" class="img-thumbnail wp-post-image" alt="01">';
+						?>
 			    </a>
 			</div>
 			<div class="col-sm-8  col-xs-12 post-tag-text">
@@ -33,7 +38,7 @@
 				</div>
 				<div class="post-short-text text-justify">
 					<?php
-						the_excerpt();
+						the_excerpt(40);
 					?>
 				</div>
 				<!--footer class="entry-footer">
