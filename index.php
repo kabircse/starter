@@ -55,7 +55,7 @@ get_header(); ?>
 
 					<div class="col-md-4 col-xs-12 sidebar">
 					<?php
-						get_sidebar();
+							get_sidebar();
 						?>
 					</div>
 	    	</div>

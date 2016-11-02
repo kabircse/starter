@@ -86,7 +86,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 				</div>
 			</div>
 			<div class="tab-pane" id="comments">
-				<div class="popular-posts">
+				<div class="recent-comments">
 					<ul class="list-group">
 						<?php
 							$args = array('per_page' => 5 );
@@ -94,7 +94,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 							foreach ($recent_comments as $comment) {?>
 								<li class="list-group-item">
 									<span class="tag pull-sm-left">
-										<img class="img sidebar-post-img img-circle" width="60" height="60" src="<?php echo get_avatar_url($comment);?>" alt="Avatar">
+										<img class="img sidebar-post-img img-circle" width="50" height="50" src="<?php echo get_avatar_url($comment);?>" alt="Avatar">
 									</span>
 									<?php echo $comment->comment_author;?>, <a class="text-info" href="<?php echo get_post_permalink($comment->comment_post_ID);?>"><?php echo get_the_title($comment->comment_post_ID,25);?></a><br/>
 									<span><?php echo comment_excerpt($comment->comment_ID);?></span>

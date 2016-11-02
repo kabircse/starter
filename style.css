@@ -336,7 +336,7 @@ object {
 
 body{
     margin-top: 2px;
-    font-family: 'Raleway', Helvetica, sans-serif;
+    font-family: 'Roboto', Helvetica, sans-serif;
     font-size: 16px;
 }
 
@@ -483,8 +483,26 @@ padding:6px 9px 5px 9px;
 background: #3279BB;
 color:#fff;
 }
-
-
+/*
+* Style for comment given
+*/
+.comment-body{
+    position: relative;
+    display: block;
+    margin-bottom: .75rem;
+    background-color: #fff;
+    border-radius: .25rem;
+    border: 1px solid rgba(0,0,0,.125);
+    padding: 1.25rem;
+}
+.comment-metadata {
+    float: right;
+    margin-top: -30px;
+}
+.reply {
+    float: right;
+    margin-top: -15px;
+}
 
 /* Sticky footer styles
 -------------------------------------------------- */

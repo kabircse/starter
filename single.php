@@ -30,7 +30,7 @@
 											</div>
 										</div>
 										<div class="row">
-										<div class="col-sm-12 ">
+										    <div class="col-sm-12 ">
 												<div class="post-tag">
 														<i class="fa fa-calendar" aria-hidden="true"><?php the_date();?></i>
 														<i class="fa fa-user" aria-hidden="true"> <?php the_author();?></i>
@@ -48,7 +48,7 @@
 																			<img class="img img-thumbnail" src="<?php echo get_avatar_url( get_the_author_meta( 'ID' ), 32 ); ?>" alt="Card image cap">
 																		</div>
 																<div class="author-description">
-																		<p class="text-justify"><?php the_author_meta('description');?></p>
+																		<p class="text-justify"><i><?php the_author_meta('description');?></i></p>
 																		<div class="author-history">
 																				<p>Writting since:
 																					<span class="tag tag-info">
@@ -154,16 +154,16 @@
 														?>
 												</div>
 										</div>
-									</div>
+									  </div>
 								</article>
 								<?php endwhile;?>
 						<?php endif;?>
 					</div>
- 					<div class="col-md-4 col-xs-12 sidebar">
- 					<?php
- 						get_sidebar();
- 						?>
- 				</div>
+					<div class="col-md-4 col-xs-12 sidebar">
+					<?php
+							get_sidebar();
+						?>
+					</div>
  	  </div>
  	</div>
  </section>

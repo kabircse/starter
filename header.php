@@ -16,7 +16,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <!--Google Fonts-->
-<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <!--Bootstrap CSS-->
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory');?>/assets/css/bootstrap.min.css" />
 <!--FontAwesome Icons-->
@@ -37,7 +37,7 @@
 	        <div class="blog-head">
 	            <div class="container">
 	                <div class="col-sm-5">
-	                    <a href="index.html" class="navbar-brand pull-left site-title"><strong>Starter</strong></a>
+	                    <a href="<?php bloginfo('url');?>" class="navbar-brand pull-left site-title"><strong>Starter</strong></a>
 	                </div>
 	                <div class="col-sm-7">
 	                    <nav class="navbar navbar-light pull-right" id="nav1">
@@ -45,17 +45,17 @@
 	                            <button class="navbar-toggler hidden-sm-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar1">
 	                                ☰
 	                            </button>
-								<?php
-									wp_nav_menu(array(
-											'theme_location'  => 'primary',
-											'container' 	      => 'div',
-											'container_class'  => 'collapse navbar-toggleable-xs',
-											'container_id'		 => 'collapsingNavbar1',
-											'menu_class'	    => 'nav nav-inline',
-											'sub_menu_class' => 'nav-item'
-										)
-									);
-								?>
+															<?php
+																wp_nav_menu(array(
+																		'theme_location'  => 'primary',
+																		'container' 	      => 'div',
+																		'container_class'  => 'collapse navbar-toggleable-xs',
+																		'container_id'		 => 'collapsingNavbar1',
+																		'menu_class'	    => 'nav nav-inline',
+																		'sub_menu_class' => 'nav-item'
+																	)
+																);
+															?>
 	                        </div>
 	                    </nav>
 	                </div>

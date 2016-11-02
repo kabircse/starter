@@ -17,7 +17,7 @@
 					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 				endif;
 				?>
-				<span class="tag tag-default pull-right">7</span>
+				<span class="tag tag-default pull-right" title="Total Comments" alt="Total Comments"><?php comments_number( '0', '1', '% ' );?></span>
 		</div>
 		<div class="row">
 			<div class="col-sm-3 col-xs-12 post-img">
