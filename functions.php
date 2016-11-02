@@ -99,8 +99,8 @@ function starter_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'starter' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 }
 add_action( 'widgets_init', 'starter_widgets_init' );
@@ -172,10 +172,11 @@ function setPostViews($postID) {
 }
 
 /*Excerpt length */
-function custom_excerpt_length( $length ) {
-    return 25;
+function custom_excerpt_more( $length ) {
+    global $post;
+	return '...<a class="moretag" href="'.get_permalink($post->ID).'"> continue reading &raquo;</a> ';
 }
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+add_filter( 'excerpt_more', 'custom_excerpt_more', $length );
 
 /**
  * Implement the Custom Header feature.

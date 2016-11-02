@@ -14,9 +14,9 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 
 	<aside class="sidebar-aside">
 		<div class="search-bar">
-			<form class="form-inline">
+			<form class="form-inline" action="<?php esc_url(home_url('/'))?>">
 				<div class="form-group">
-					<input type="text" class="form-control" id="search" placeholder="Search">
+					<input type="text" class="form-control" method="get" id="search" name="s" placeholder="Search">
 					<button type="submit" class="btn btn-info search-btn">Search</button>
 				</div>
 			</form>

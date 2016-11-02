@@ -28,14 +28,16 @@
 											<div class="col-sm-12 post-title">
 													<h2 class="pull-left"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
 											</div>
+
 										</div>
 										<div class="row">
 										    <div class="col-sm-12 ">
 												<div class="post-tag">
-														<i class="fa fa-calendar" aria-hidden="true"><?php the_date();?></i>
-														<i class="fa fa-user" aria-hidden="true"> <?php the_author();?></i>
-														<i class="fa fa-folder-open-o" aria-hidden="true"> <?php the_category(', ');?></i>
-														<i class="fa fa-tags" aria-hidden="true"> <?php the_tags();?></i>
+														<i class="fa fa-calendar" aria-hidden="true"></i> <time><?php the_date();?></time>
+														<i class="fa fa-user" aria-hidden="true"></i> <?php the_author();?>
+														<i class="fa fa-folder-open-o" aria-hidden="true"></i> <?php the_category(', ');?>
+														<i class="fa fa-tags" aria-hidden="true"></i> <?php the_tags();?>
+                                                        <?php edit_post_link(' Edit ',' <i class="fa fa-pencil" aria-hidden="true"></i>');?>
 												</div>
 												<div class="col-sm-12 single-post-text text text-justify">
 														<div class="single-post-text">
