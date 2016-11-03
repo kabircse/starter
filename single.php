@@ -64,11 +64,17 @@
 																		<p>URL: <a target="_blank" href="<?php the_author_meta('url');?>"><?php the_author_meta('url');?></a></p>
 																</div>
 														</div>
-														<div class="col-sm-12 similar-post-slide">
+														<!--div class="col-sm-12 similar-post-slide">
+																<section class="container p-t-3">
+																		<div class="row">
+																				<div class="col-lg-12">
+																						<h5>Similar Posts</h5>
+																				</div>
+																		</div>
+																</section>
 																<section class="carousel slide" data-ride="carousel" id="postsCarousel">
 																		<div class="container">
 																				<div class="row">
-            																<h5>Similar Posts</h5>
 																						<div class="col-xs-12 text-md-right lead">
 																								<a class="btn btn-secondary-outline prev" href="" title="go back"><i class="fa fa-lg fa-chevron-left"></i></a>
 																								<a class="btn btn-secondary-outline next" href="" title="more"><i class="fa fa-lg fa-chevron-right"></i></a>
@@ -77,82 +83,72 @@
 																		</div>
 																		<div class="container p-t-0 m-t-2 carousel-inner">
 																				<div class="row row-equal carousel-item active m-t-0">
-                                          <?php
-                                              //related post with tags
-                                              global $post;
-                                              $tags = wp_get_post_tags( $post_id = $post->ID);
-                                              if($tags){
-                                                $first_tag = $tags[0]->term_id;
-                                                $args = array(
-                                                  'tag__in' => array($first_tag),
-                                                  'post__not_in' => array($post->ID),
-                                                  'posts_per_page' => 3,
-                                                  'orderby' => 'asc'
-                                                );
-                                                $related_posts = new WP_Query($args);
-                                                if($related_posts->have_posts()){
-                                                    $slide = 1;
-                                                    while ($related_posts->have_posts()) : $related_posts->the_post();
-                                                        ?>
-              																						<div class="col-md-4 similar-post">
-              																								<div class="card">
-              																										<div class="card-img-top card-img-top-250">
-                                                                    <?php if(has_post_thumbnail())
-              																											        the_post_thumbnail('medium',  array('class' => 'img-fluid' ));
-                                                                          else
-                                                                            echo '<img width="300" height="70" src="'.get_template_directory_uri().'/assets/images/common/no-image.png" class="img-fluid wp-post-image" alt="01">';
-                                                                  ?>
-              																										</div>
-              																										<div class="card-block p-t-2">
-              																												<h6 class="small text-wide p-b-2"><a href="<?php esc_url(get_permalink());?>"><?php the_title();?></a></h6>
-              																										</div>
-              																								</div>
-              																						</div>
-                                                      <?php
-                                                  endwhile;
-                                                }
-                                                wp_reset_query();
-                                              }
-                                          ?>
+																						<div class="col-md-4 similar-post">
+																								<div class="card">
+																										<div class="card-img-top card-img-top-250">
+																												<img class="img-fluid" src="http://i.imgur.com/EW5FgJM.png" alt="Carousel 1">
+																										</div>
+																										<div class="card-block p-t-2">
+																												<h6 class="small text-wide p-b-2"><a>Insight a view of theories bd stall</a></h6>
+																										</div>
+																								</div>
+																						</div>
+																						<div class="col-md-4 similar-post">
+																								<div class="card">
+																										<div class="card-img-top card-img-top-250">
+																												<img class="img-fluid" src="http://i.imgur.com/Hw7sWGU.png" alt="Carousel 2">
+																										</div>
+																										<div class="card-block p-t-2">
+																												<h6 class="small text-wide p-b-2"><a>Development your theme of studies for great learning point</a></h6>
+																										</div>
+																								</div>
+																						</div>
+																						<div class="col-md-4 similar-post">
+																								<div class="card">
+																										<div class="card-img-top card-img-top-250">
+																												<img class="img-fluid" src="http://i.imgur.com/g27lAMl.png" alt="Carousel 3">
+																										</div>
+																										<div class="card-block p-t-2">
+																												<h6 class="small text-wide p-b-2"><a>Development</a></h6>
+																										</div>
+																								</div>
+																						</div>
 																				</div>
 																				<div class="row row-equal carousel-item m-t-0">
-                                          <?php
-                                              //related post with tags
-                                              global $post;
-                                              $tags = wp_get_post_tags( $post_id = $post->ID);
-                                              if($tags){
-                                                $first_tag = $tags[0]->term_id;
-                                                $args = array(
-                                                  'tag__in' => array($first_tag),
-                                                  'post__not_in' => array($post->ID),
-                                                  'posts_per_page' => 3,
-                                                  'orderby' => 'desc'
-                                                );
-                                                $related_posts = new WP_Query($args);
-                                                if($related_posts->have_posts()){
-                                                    $slide = 1;
-                                                    while ($related_posts->have_posts()) : $related_posts->the_post();
-                                                        ?>
-              																						<div class="col-md-4 similar-post">
-              																								<div class="card">
-              																										<div class="card-img-top card-img-top-250">
-              																												<?php the_post_thumbnail('medium',  array('class' => 'img-fluid' ));?>
-              																										</div>
-              																										<div class="card-block p-t-2">
-              																												<h6 class="small text-wide p-b-2"><a href="<?php esc_url(get_permalink());?>"><?php the_title();?></a></h6>
-              																										</div>
-              																								</div>
-              																						</div>
-                                                      <?php
-                                                  endwhile;
-                                                }
-                                                wp_reset_query();
-                                              }
-                                          ?>
+																						<div class="col-md-4 similar-post">
+																								<div class="card">
+																										<div class="card-img-top card-img-top-250">
+																												<img class="img-fluid" src="//visualhunt.com/photos/l/1/office-student-work-study.jpg" alt="Carousel 4">
+																										</div>
+																										<div class="card-block p-t-2">
+																												<h6 class="small text-wide p-b-2">Another</h6>
+																										</div>
+																								</div>
+																						</div>
+																						<div class="col-md-4 similar-post">
+																								<div class="card">
+																										<div class="card-img-top card-img-top-250">
+																												<img class="img-fluid" src="//visualhunt.com/photos/l/1/working-woman-technology-computer.jpg" alt="Carousel 5">
+																										</div>
+																										<div class="card-block p-t-2">
+																												<h6 class="small text-wide p-b-2"><span class="pull-xs-right">12.04</span> Category 1</h6>
+																										</div>
+																								</div>
+																						</div>
+																						<div class="col-md-4  similar-post fadeIn wow">
+																								<div class="card">
+																										<div class="card-img-top card-img-top-250">
+																												<img class="img-fluid" src="//visualhunt.com/photos/l/1/people-office-team-collaboration.jpg" alt="Carousel 6">
+																										</div>
+																										<div class="card-block p-t-2">
+																												<h6 class="small text-wide p-b-2">Category 3</h6>
+																										</div>
+																								</div>
+																						</div>
 																				</div>
 																		</div>
 																</section>
-														</div>
+														</div> -->
 														<?php
 															// If comments are open or we have at least one comment, load up the comment template
 															if ( comments_open() || '0' != get_comments_number() )
