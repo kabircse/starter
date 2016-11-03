@@ -1,30 +1,46 @@
 <?php
 /**
- * Template part for displaying results in search pages.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package Starter
  */
 
 ?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php starter_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-		<?php starter_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+<article class="post-block">
+	<div class="col-sm-12 post-title">
+			<?php
+			if ( is_single() ) :
+				the_title( '<h4 class="entry-title">', '</h4>' );
+			else :
+				the_title( '<h4 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h4>' );
+			endif;
+			?>
+			<span class="tag tag-default pull-right" title="Total Comments" alt="Total Comments"><?php comments_number( '0', '1', '% ' );?></span>
+	</div>
+	<div class="row">
+		<div class="col-sm-3 col-xs-12 post-img">
+			<a src="<?php the_permalink();?>" alt="<?php the_title_attribute();?>">
+				<?php if(has_post_thumbnail()){?>
+					<?php the_post_thumbnail('medium',  array('class' => 'img-thumbnail' ));?>
+				<?php }
+					else
+						echo '<img src="'.get_template_directory_uri().'/assets/images/common/no-image.png" class="img-thumbnail wp-post-image" alt="01">';
+					?>
+				</a>
+		</div>
+		<div class="col-sm-8  col-xs-12 post-tag-text">
+			<div class="post-tag">
+				<i class="fa fa-calendar" aria-hidden="true"><?php starter_posted_on(); ?></i>
+				<i class="fa fa-user" aria-hidden="true"> <?php the_author(); ?></i>
+				<i class="fa fa-folder-open-o" aria-hidden="true"><?php the_category(', ');?></i>
+			</div>
+			<div class="post-short-text text-justify">
+				<?php
+					the_excerpt(40);
+				?>
+			</div>
+			<!--footer class="entry-footer">
+				<php starter_entry_footer(); ?>
+			</footer--><!-- .entry-footer -->
+			</div>
+	</div>
+ </article><!-- #post-## -->

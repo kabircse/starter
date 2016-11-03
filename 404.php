@@ -7,58 +7,62 @@
  * @package Starter
  */
 
-get_header(); ?>
+ get_header(); ?>
+ <section class="main">
+ 	<div class="container">
+ 		<div class="row">
+ 				<div class="container">
+ 					<h4><?php wp_title();?></h4>
+ 					<div class="col-md-8 col-xs-12 post-lists">
+						<section class="error-404 not-found">
+							<header class="page-header">
+								<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'starter' ); ?></h1>
+							</header><!-- .page-header -->
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+							<div class="page-content">
+								<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'starter' ); ?></p>
+								<?php
+									get_search_form();
+									the_widget( 'WP_Widget_Recent_Posts' );
+									// Only show the widget if site has multiple categories.
+									if ( starter_categorized_blog() ) :	?>
+											<div class="widget widget_categories">
+											<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'starter' ); ?></h2>
+											<ul>
+											<?php
+												wp_list_categories( array(
+													'orderby'    => 'count',
+													'order'      => 'DESC',
+													'show_count' => 1,
+													'title_li'   => '',
+													'number'     => 10,
+												) );
+											?>
+											</ul>
+										</div><!-- .widget -->
+									<?php
+									endif;
+									/* translators: %1$s: smiley */
+									$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'starter' ), convert_smilies( ':)' ) ) . '</p>';
+									the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+									the_widget( 'WP_Widget_Tag_Cloud' );
+								?>
+							</div><!-- .page-content -->
+						</section><!-- .error-404 -->
+ 						<?php if (function_exists("pagination")) {
+     						pagination($additional_loop->max_num_pages);
+ 							} ?>
+ 					</div><!-- #main -->
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'starter' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'starter' ); ?></p>
-
-					<?php
-						get_search_form();
-
-						the_widget( 'WP_Widget_Recent_Posts' );
-
-						// Only show the widget if site has multiple categories.
-						if ( starter_categorized_blog() ) :
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'starter' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-						endif;
-
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'starter' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-get_footer();
+ 					<div class="col-md-4 col-xs-12 sidebar">
+ 					<?php
+ 							get_sidebar();
+ 						?>
+ 					</div>
+ 	    	</div>
+ 	   </div>
+ 	</div>
+ </section>
+ <!-- /section -->
+ <?php
+ 	get_footer();

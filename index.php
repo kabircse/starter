@@ -17,6 +17,7 @@ get_header(); ?>
 	<div class="container">
 		<div class="row">
 				<div class="container">
+					<h4><?php wp_title();?></h4>
 					<div class="col-md-8 col-xs-12 post-lists">
 						<?php
 						if ( have_posts() ) :

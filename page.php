@@ -12,27 +12,34 @@
  * @package Starter
  */
 
-get_header(); ?>
+ get_header(); ?>
+ <section class="main">
+ 	<div class="container">
+ 		<div class="row">
+ 				<div class="container">
+ 					<div class="col-md-8 col-xs-12 post-lists">
+ 						<?php
+ 						if ( have_posts() ) :
+ 							/* Start the Loop */
+ 							while ( have_posts() ) : the_post();
+ 									get_template_part( 'template-parts/content', 'page' );
+ 							endwhile;
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+						else :
+							get_template_part( 'template-parts/content', 'none' );
 
-			<?php
-			while ( have_posts() ) : the_post();
+ 						endif; ?>
+ 					</div><!-- #main -->
 
-				get_template_part( 'template-parts/content', 'page' );
-
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-
-			endwhile; // End of the loop.
-			?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+ 					<div class="col-md-4 col-xs-12 sidebar">
+ 					<?php
+ 							get_sidebar();
+ 						?>
+ 					</div>
+ 	    	</div>
+ 	   </div>
+ 	</div>
+ </section>
+ <!-- /section -->
+ <?php
+ 	get_footer();

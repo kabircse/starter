@@ -1,9 +1,5 @@
 <?php
 /**
- * Template part for displaying posts.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
  * @package Starter
  */
 
@@ -12,13 +8,12 @@
 		<div class="col-sm-12 post-title">
 				<?php
 				if ( is_single() ) :
-					the_title( '<h2 class="entry-title">', '</h2>' );
+					the_title( '<h4 class="entry-title">', '</h4>' );
 				else :
-					the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
+					the_title( '<h4 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h4>' );
 				endif;
 				?>
-				<?php edit_post_link(' Edit ',' <i class="fa fa-pencil" aria-hidden="true"></i>');?>
-				<span class="tag tag-default pull-right" title="Total Comments" alt="Total Comments"> <a href="<?php comments_link();?>"><?php comments_number( '0', '1', '% ' );?></a></span>
+				<span class="tag tag-default pull-right" title="Total Comments" alt="Total Comments"><?php comments_number( '0', '1', '% ' );?></span>
 		</div>
 		<div class="row">
 			<div class="col-sm-3 col-xs-12 post-img">
@@ -33,9 +28,9 @@
 			</div>
 			<div class="col-sm-8  col-xs-12 post-tag-text">
 				<div class="post-tag">
-					<i class="fa fa-calendar" aria-hidden="true"></i> <time><?php the_date(); ?></time>
-					<i class="fa fa-user" aria-hidden="true"></i> <?php the_author(); ?>
-					<i class="fa fa-folder-open-o" aria-hidden="true"></i> <?php the_category(', ');?>
+					<i class="fa fa-calendar" aria-hidden="true"><?php starter_posted_on(); ?></i>
+					<i class="fa fa-user" aria-hidden="true"> <?php the_author(); ?></i>
+					<i class="fa fa-folder-open-o" aria-hidden="true"><?php the_category(', ');?></i>
 				</div>
 				<div class="post-short-text text-justify">
 					<?php

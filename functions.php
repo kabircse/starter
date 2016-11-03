@@ -42,9 +42,13 @@ function starter_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
+	// Add Support WooCommerce
+	add_theme_support( 'woocommerce' );
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'starter' ),
+		'secondary' => esc_html__( 'Secondary', 'starter' ),
 	) );
 
 	//add class on li
@@ -94,7 +98,7 @@ add_action( 'after_setup_theme', 'starter_content_width', 0 );
  */
 function starter_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'starter' ),
+		'name'          => esc_html__( 'Sidebar-1', 'starter' ),
 		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'starter' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -102,8 +106,50 @@ function starter_widgets_init() {
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar-2', 'starter' ),
+		'id'            => 'sidebar-2',
+		'description'   => esc_html__( 'Add widgets here.', 'starter' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+		register_sidebar( array(
+			'name'          => esc_html__( 'Footer-1', 'starter' ),
+			'id'            => 'footer-1',
+			'description'   => esc_html__( 'Add widgets here.', 'starter' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		) );
+		register_sidebar( array(
+			'name'          => esc_html__( 'Footer-2', 'starter' ),
+			'id'            => 'footer-2',
+			'description'   => esc_html__( 'Add widgets here.', 'starter' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h4 class="widget-title">',
+			'after_title'   => '</h4>',
+		) );
 }
 add_action( 'widgets_init', 'starter_widgets_init' );
+
+
+//Custom functions
+/*
+	 * Enable support for Post Thumbnails on posts and pages.
+	 *
+	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+	 */
+	 /*
+		add_theme_support( 'post-thumbnails' );
+		add_image_size( 'blog-header', 900, 300, array('center','center')); //blog Image
+		add_image_size( 'portfolio-thumbnail', 560, 450, array('center','center')); //Portfolio Image
+	  add_image_size( 'blog-thumbnail', 480, 300, array('center','center')); //Blog Image
+		add_image_size( 'team-thumbnail', 380, 380, array('top','center')); //Portfolio Image
+	*/
 
 /**
  * Enqueue scripts and styles.
