@@ -17,7 +17,7 @@
 		</div>
 		<div class="row">
 			<div class="col-sm-3 col-xs-12 post-img">
-				<a src="<?php the_permalink();?>" alt="<?php the_title_attribute();?>">
+				<a href="<?php the_permalink();?>" alt="<?php the_title_attribute();?>">
 					<?php if(has_post_thumbnail()){?>
 						<?php the_post_thumbnail('medium',  array('class' => 'img-thumbnail' ));?>
 					<?php }

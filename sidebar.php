@@ -8,6 +8,14 @@
  */
 ?>
 <aside class="sidebar-aside">
+	<div class="m-l-5 m-b-5">
+		<a href="#" class="btn btn-outline-primary btn-md"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+		<a href="#" class="btn btn-outline-danger btn-md"><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
+		<a href="#" class="btn btn-outline-primary btn-md"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+		<a href="#" class="btn btn-outline-danger btn-md"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+		<a href="#" class="btn btn-outline-danger btn-md"><i class="fa fa-pinterest-square" aria-hidden="true"></i></a>
+		<a href="#" class="btn btn-outline-warning btn-md"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+	</div>
 	<div class="search-bar">
 		<form class="form-inline" action="<?php esc_url(home_url('/'))?>">
 			<div class="form-group">
