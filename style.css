@@ -8,7 +8,7 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: starter
-Tags:Responsive,2 Column,Blog,Teaching.
+Tags: custom-background, custom-colors, custom-header, custom-menu, featured-images, one-column, right-sidebar, theme-options, threaded-comments, translation-ready, two-columns, grid-layout, footer-widgets, blog, e-commerce, photography, portfolio
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -335,7 +335,7 @@ object {
 --------------------------------------------------------------*/
 
 body{
-    margin-top: 2px;
+    margin-top: 1px;
     font-family: 'Roboto', Helvetica, sans-serif;
     font-size: 16px;
 }
@@ -522,6 +522,7 @@ color:#fff;
     padding-left: 0 !important;
     background-color: #428bca;
     padding: 0 20px;
+		z-index: 1;
 }
 .sub-menu li{
     margin-left: 0 !important;
@@ -544,7 +545,9 @@ color:#fff;
 .menu-item-has-children >a:after{
     content:"▼";
 }
-
+.comments-number{
+	padding: 5px 7px;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 .footer {

@@ -4,7 +4,7 @@
  */
 
 ?>
-	<article class="post-block">
+	<article id="post-<?php the_ID(); ?>" <?php post_class('post-block'); ?>>
 		<div class="col-sm-12 post-title">
 				<?php
 				if ( is_single() ) :
@@ -13,7 +13,7 @@
 					the_title( '<h4 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h4>' );
 				endif;
 				?>
-				<span class="tag tag-default pull-right" title="Total Comments" alt="Total Comments"><?php comments_number( '0', '1', '% ' );?></span>
+				<span class="tag tag-success pull-right comments-number" title="Total Comments" alt="Total Comments"><a href="<?php comments_link();?>"><?php comments_number( '0', '1', '% ' );?></a></span>
 		</div>
 		<div class="row">
 			<div class="col-sm-3 col-xs-12 post-img">
@@ -28,13 +28,13 @@
 			</div>
 			<div class="col-sm-8  col-xs-12 post-tag-text">
 				<div class="post-tag">
-					<i class="fa fa-calendar" aria-hidden="true"><?php starter_posted_on(); ?></i>
+					<i class="fa fa-calendar" aria-hidden="true"> <?php the_date(); ?></i>
 					<i class="fa fa-user" aria-hidden="true"> <?php the_author(); ?></i>
-					<i class="fa fa-folder-open-o" aria-hidden="true"><?php the_category(', ');?></i>
+					<i class="fa fa-folder-open-o" aria-hidden="true"> <?php the_category(', ');?></i>
 				</div>
 				<div class="post-short-text text-justify">
 					<?php
-						the_excerpt(40);
+						the_excerpt(45);
 					?>
 				</div>
 				<!--footer class="entry-footer">

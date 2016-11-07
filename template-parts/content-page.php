@@ -5,7 +5,7 @@
 
 ?>
 
-	<article class="post-block">
+	<article id="post-<?php the_ID(); ?>" <?php post_class('post-block'); ?>>
 			<div class="row">
 				<div class="col-sm-12 post-title">
 						<h2 class="pull-left"><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
@@ -17,7 +17,7 @@
 			<div class="row">
 				<?php if(has_post_thumbnail()):?>
 					<div class="col-sm-12 single-post-img">
-							<img class="img-thumbnail" src="<?php echo get_template_directory_uri();?>/assets/images/single-post/002.jpg" alt="Card image cap">
+							<?php the_post_thumbnail('thumbnails',  array('class' => 'img-thumbnail' ));?>
 					</div>
 				<?php endif;?>
 			</div>

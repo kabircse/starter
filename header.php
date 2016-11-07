@@ -18,9 +18,9 @@
 <!--Google Fonts-->
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 <!--Bootstrap CSS-->
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory');?>/assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="<?php echo esc_url(get_stylesheet_directory_uri());?>/assets/css/bootstrap.min.css" />
 <!--FontAwesome Icons-->
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_directory');?>/assets/css/font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" href="<?php echo esc_url(get_stylesheet_directory_uri());?>/assets/css/font-awesome/css/font-awesome.min.css" />
 <?php wp_head(); ?>
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
@@ -37,7 +37,7 @@
 	        <div class="blog-head">
 	            <div class="container">
 	                <div class="col-sm-5">
-	                    <a href="<?php bloginfo('url');?>" class="navbar-brand pull-left site-title"><strong>Starter</strong></a>
+	                    <a href="<?php echo esc_url( home_url() );?>" class="navbar-brand pull-left site-title"><strong>Starter</strong></a>
 	                </div>
 	                <div class="col-sm-7">
 	                    <nav class="navbar navbar-light pull-right" id="nav1">

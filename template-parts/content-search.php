@@ -5,7 +5,7 @@
  */
 
 ?>
-<article class="post-block">
+<article id="post-<?php the_ID(); ?>" <?php post_class('post-block'); ?>>
 	<div class="col-sm-12 post-title">
 			<?php
 			if ( is_single() ) :
