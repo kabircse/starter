@@ -217,7 +217,7 @@ function setPostViews($postID) {
 /*Excerpt length */
 function custom_excerpt_more( $length ) {
     global $post;
-	return '...<a class="moretag" href="'.get_permalink($post->ID).'"> continue reading &raquo;</a> ';
+		return '...<a class="moretag btn-primary btn-sm" href="'.get_permalink($post->ID).'"> continue reading &raquo;</a> ';
 }
 add_filter( 'excerpt_more', 'custom_excerpt_more', 45 );
 
@@ -275,6 +275,10 @@ function cd_add_editor_styles() {
     add_editor_style();
 }
 add_action( 'init', 'cd_add_editor_styles' );
+/**
+ *Remove wordpress.org form meta
+ */
+ add_filter( 'widget_meta_poweredby', '__return_empty_string' );
 
 /**
  * Implement the Custom Header feature.

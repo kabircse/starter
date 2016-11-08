@@ -36,10 +36,10 @@
 	    <header>
 	        <div class="blog-head">
 	            <div class="container">
-	                <div class="col-sm-5">
+	                <div class="col-sm-4">
 	                    <a href="<?php echo esc_url( home_url() );?>" class="navbar-brand pull-left site-title"><strong>Starter</strong></a>
 	                </div>
-	                <div class="col-sm-7">
+	                <div class="col-sm-8">
 	                    <nav class="navbar navbar-light pull-right" id="nav1">
 	                        <div class="container-fluid">
 	                            <button class="navbar-toggler hidden-sm-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar1">

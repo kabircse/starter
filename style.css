@@ -409,7 +409,7 @@ nav a {
 
 .post-block {
     margin-bottom: 15px;
-	border-bottom-style: ridge;
+	  border-bottom-style: ridge;
 }
 
 /*.post-tag-text{
@@ -455,6 +455,11 @@ nav a {
 }
 .similar-post {
     margin-left: -28px;
+}
+/* Sticky post design */
+.sticky {
+    border: 1px dashed gainsboro;
+    background: aliceblue;
 }
 
 /*For pagination, remove later*/
@@ -546,7 +551,10 @@ color:#fff;
     content:"▼";
 }
 .comments-number{
-	padding: 5px 7px;
+    padding: 5px 7px;
+    color: #025aa5;
+    background-color: #eceeef;
+    border-color: #01549b;
 }
 /* Sticky footer styles
 -------------------------------------------------- */
