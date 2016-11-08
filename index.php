@@ -16,7 +16,7 @@ get_header(); ?>
 <section class="main">
 	<div class="container">
 		<div class="row">
-				<div class="container">
+				<div class="container-fluid">
 					<h4><?php wp_title();?></h4>
 					<div class="col-md-8 col-xs-12 post-lists">
 						<?php

@@ -53,7 +53,7 @@
     <script src="<?php echo esc_url( get_template_directory_uri() );?>/assets/js/ie10-viewport-bug-workaround.js"></script>
     <script src="<?php echo esc_url( get_template_directory_uri() );?>/assets/js/modernizr.js"></script>
     <script src="<?php echo esc_url( get_template_directory_uri() );?>/assets/js/custom.js"></script>
-    <script src="<?php echo esc_url( get_template_directory_uri() );?>/assets/lib/slider/slider.js"></script>
+    <script src="<?php echo esc_url( get_template_directory_uri() );?>/js/customizer.js"></script>
     <!--Font Script For Typekit-->
     <script src="//use.typekit.net/ckt3tvt.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>

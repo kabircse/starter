@@ -88,7 +88,7 @@
 					<div class="recent-comments">
 						<ul class="list-group">
 							<?php
-								$args = array('per_page' => 5 );
+								$args = array('number' => 5 );
 								$recent_comments = get_comments($args);
 								foreach ($recent_comments as $comment) {?>
 									<li class="list-group-item">

@@ -265,6 +265,16 @@ function my_social_networks($networks){
 }
 add_filter( 'user_contactmethods', 'my_social_networks', 10,1);
 
+/**
+ * Apply theme's stylesheet to the visual editor.
+ *
+ * @uses add_editor_style() Links a stylesheet to visual editor
+ * @uses get_stylesheet_uri() Returns URI of theme stylesheet
+ */
+function cd_add_editor_styles() {
+    add_editor_style();
+}
+add_action( 'init', 'cd_add_editor_styles' );
 
 /**
  * Implement the Custom Header feature.
