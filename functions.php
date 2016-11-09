@@ -136,21 +136,6 @@ function starter_widgets_init() {
 }
 add_action( 'widgets_init', 'starter_widgets_init' );
 
-
-//Custom functions
-/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 */
-	 /*
-		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'blog-header', 900, 300, array('center','center')); //blog Image
-		add_image_size( 'portfolio-thumbnail', 560, 450, array('center','center')); //Portfolio Image
-	  add_image_size( 'blog-thumbnail', 480, 300, array('center','center')); //Blog Image
-		add_image_size( 'team-thumbnail', 380, 380, array('top','center')); //Portfolio Image
-	*/
-
 /**
  * Enqueue scripts and styles.
  */
@@ -221,49 +206,6 @@ function custom_excerpt_more( $length ) {
 }
 add_filter( 'excerpt_more', 'custom_excerpt_more', 45 );
 
-function social_sharing_buttons($content) {
-	global $post;
-	if(is_singular() || is_home()){
-		// Get current page URL
-		$currentURL = urlencode(get_permalink());
-		// Get current page title//crunchify
-		$currentTitle = str_replace( ' ', '%20', get_the_title());
-		// Get Post Thumbnail for pinterest
-		$currentThumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
-		// Construct sharing URL without using any script
-		$twitterURL = 1;//'https://twitter.com/intent/tweet?text='.$currentTitle.'&amp;url='.$currentURL.'&amp;via=current';
-		$facebookURL = 1;//'https://www.facebook.com/sharer/sharer.php?u='.$currentURL;
-		$googleURL = 1;//'https://plus.google.com/share?url='.$currentURL;
-		$youtubeURL = 1;//'https://bufferapp.com/add?url='.$currentURL.'&amp;text='.$currentTitle;
-		$linkedInURL = 1;//'https://www.linkedin.com/shareArticle?mini=true&url='.$currentURL.'&amp;title='.$currentTitle;
-		$pinterestURL = 1;//'https://pinterest.com/pin/create/button/?url='.$currentURL.'&amp;media='.$currentThumbnail[0].'&amp;description='.$currentTitle;
-
-		// Add sharing button at the end of page/page content
-		$content .= '<div class="current-social">Share on: ';
-		$content .= '<a class="btn btn-outline-primary btn-md m-l-5" title="FaceBook" href="'.$facebookURL.'" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>';
-		$content .= '<a class="btn btn-outline-danger btn-md m-l-5" title="Google" href="'.$googleURL.'" target="_blank"><i class="fa fa-google-plus-official" aria-hidden="true"></i></a>';
-		$content .= '<a class="btn btn-outline-primary btn-md m-l-5" title="Tweet" href="'.$twitterURL.'" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>';
-		$content .= '<a class="btn btn-outline-danger btn-md m-l-5" title="youtube" href="'.$youtubeURL.'" target="_blank"><i class="fa fa-youtube-square" aria-hidden="true"></i></a>';
-		$content .= '<a class="btn btn-outline-primary btn-md m-l-5" title="linkedin" href="'.$linkedInURL.'" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>';
-		$content .= '<a class="btn btn-outline-danger btn-md m-l-5" title="pinterest" href="'.$pinterestURL.'" target="_blank"><i class="fa fa-pinterest-square" aria-hidden="true"></i></a>';
-		$content .= '</div>';
-		return $content;
-	}else{
-		// if not a post/page then don't include sharing button
-		return $content;
-	}
-}
-add_filter( 'the_content', 'social_sharing_buttons');
-
-/*Add social links to user profile*/
-function my_social_networks($networks){
-		//facebook
-		$networks['facebook'] = 'FaceBook';
-		//twitter
-		$networks['twitter'] = 'Twitter';
-		return $networks;
-}
-add_filter( 'user_contactmethods', 'my_social_networks', 10,1);
 
 /**
  * Apply theme's stylesheet to the visual editor.
@@ -275,6 +217,7 @@ function cd_add_editor_styles() {
     add_editor_style();
 }
 add_action( 'init', 'cd_add_editor_styles' );
+
 /**
  *Remove wordpress.org form meta
  */

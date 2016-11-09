@@ -556,6 +556,11 @@ color:#fff;
     background-color: #eceeef;
     border-color: #01549b;
 }
+/*design author biography*/
+.author-biography {
+    padding: inherit;
+    border: 1px solid #01549b;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 .footer {

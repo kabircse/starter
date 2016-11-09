@@ -51,7 +51,8 @@ get_header(); ?>
 						endif; ?>
 						<?php if (function_exists("pagination")) {
     						pagination($additional_loop->max_num_pages);
-							} ?>
+							}
+						?>
 					</div><!-- #main -->
 
 					<div class="col-md-4 col-xs-12 sidebar">
