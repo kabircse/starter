@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @package Starter
+ * @package starterblue
  */
 
 ?>
@@ -30,7 +30,7 @@
 		</div>
 		<div class="col-sm-8  col-xs-12 post-tag-text">
 			<div class="post-tag">
-				<i class="fa fa-calendar" aria-hidden="true"><?php starter_posted_on(); ?></i>
+				<i class="fa fa-calendar" aria-hidden="true"><?php starterblue_posted_on(); ?></i>
 				<i class="fa fa-user" aria-hidden="true"> <?php the_author(); ?></i>
 				<i class="fa fa-folder-open-o" aria-hidden="true"><?php the_category(', ');?></i>
 			</div>
@@ -40,7 +40,7 @@
 				?>
 			</div>
 			<!--footer class="entry-footer">
-				<php starter_entry_footer(); ?>
+				<php starterblue_entry_footer(); ?>
 			</footer--><!-- .entry-footer -->
 			</div>
 	</div>

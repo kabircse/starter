@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Starter
+ * @package starterblue
  */
 
 ?>

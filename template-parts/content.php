@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Starter
+ * @package starterblue
  */
 
 ?>
@@ -14,7 +14,7 @@
 				endif;
 				?>
 				<span class="tag pull-right comments-number" title="Total Comments" alt="Total Comments"><a href="<?php comments_link();?>">
-					<i class="fa fa-comment" aria-hidden="true"></i> <?php comments_number( '0', '1', '% ' );?></a></span>
+					<i class="fa fa-comment" aria-hidden="true"></i>  <?php comments_number( '0', '1', '% ' );?></a></span>
 		</div>
 		<div class="row">
 			<div class="col-sm-3 col-xs-12 post-img">
@@ -39,7 +39,7 @@
 					?>
 				</div>
 				<!--footer class="entry-footer">
-					<php starter_entry_footer(); ?>
+					<php starterblue_entry_footer(); ?>
 				</footer--><!-- .entry-footer -->
 		    </div>
 	  </div>

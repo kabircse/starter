@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
- * @package Starter
+ * @package starterblue
  */
 
  get_header(); ?>
@@ -16,18 +16,18 @@
  					<div class="col-md-8 col-xs-12 post-lists">
 						<section class="error-404 not-found">
 							<header class="page-header">
-								<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'starter' ); ?></h1>
+								<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'starterblue' ); ?></h1>
 							</header><!-- .page-header -->
 
 							<div class="page-content">
-								<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'starter' ); ?></p>
+								<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'starterblue' ); ?></p>
 								<?php
 									get_search_form();
 									the_widget( 'WP_Widget_Recent_Posts' );
 									// Only show the widget if site has multiple categories.
-									if ( starter_categorized_blog() ) :	?>
+									if ( starterblue_categorized_blog() ) :	?>
 											<div class="widget widget_categories">
-											<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'starter' ); ?></h2>
+											<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'starterblue' ); ?></h2>
 											<ul>
 											<?php
 												wp_list_categories( array(
@@ -43,7 +43,7 @@
 									<?php
 									endif;
 									/* translators: %1$s: smiley */
-									$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'starter' ), convert_smilies( ':)' ) ) . '</p>';
+									$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'starterblue' ), convert_smilies( ':)' ) ) . '</p>';
 									the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 									the_widget( 'WP_Widget_Tag_Cloud' );
 								?>

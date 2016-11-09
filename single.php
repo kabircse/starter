@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package Starter
+ * @package starterblue
  */
 
  get_header(); ?>
@@ -44,7 +44,7 @@
       															<hr/>
                                 		<?php
                                         wp_link_pages( array(
-                                  				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'starter' ) . '</span>',
+                                  				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'starterblue' ) . '</span>',
                                   				'after'       => '</div>',
                                   				'link_before' => '<span>',
                                   				'link_after'  => '</span>',

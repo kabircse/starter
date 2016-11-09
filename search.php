@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package Starter
+ * @package starterblue
  */
 
  get_header(); ?>
@@ -16,7 +16,7 @@
 						<?php
 							if ( have_posts() ) { ?>
 								<header class="page-header">
-									<h2 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'starter' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
+									<h2 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'starterblue' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
 								</header><!-- .page-header -->
 								<hr/>
 	 						<?php

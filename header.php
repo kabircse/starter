@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Starter
+ * @package starterblue
  */
 
 ?><!DOCTYPE html>
@@ -31,19 +31,19 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'starter' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'starterblue' ); ?></a>
 
 	    <header>
 	        <div class="blog-head">
 	            <div class="container">
 	                <div class="col-sm-4">
-	                    <a href="<?php echo esc_url( home_url() );?>" class="navbar-brand pull-left site-title"><strong>Starter</strong></a>
+	                    <a href="<?php echo esc_url( home_url() );?>" class="navbar-brand pull-left site-title"><strong>starterblue</strong></a>
 	                </div>
 	                <div class="col-sm-8">
 	                    <nav class="navbar navbar-light pull-right" id="nav1">
 	                        <div class="container-fluid">
 	                            <button class="navbar-toggler hidden-sm-up pull-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar1">
-	                                ☰
+	                                &#9776;
 	                            </button>
 															<?php
 																wp_nav_menu(array(
