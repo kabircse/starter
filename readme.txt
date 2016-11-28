@@ -1,4 +1,4 @@
-=== starterblue ===
+=== starter_blue ===
 
 Contributors: automattic
 Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
@@ -9,11 +9,11 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A starterblue theme called starterblue, or underscores.
+A starter_blue theme called starter_blue, or underscores.
 
 == Description ==
 
-Hi. I'm a starterblue theme called starterblue, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Hi. I'm a starter_blue theme called starter_blue, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
 
 == Installation ==
 
@@ -21,11 +21,44 @@ Hi. I'm a starterblue theme called starterblue, or underscores, if you like. I'm
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
+------------------------------------------
+
+JS Files
+    HTML5-Shiv: MIT and GPL licenses
+    https://oss.maxcdn.com/
+
+    jQuery Actual: MIT licenses
+    https://ajax.googleapis.com/ajax/libs
+    https://cdnjs.cloudflare.com/ajax/libs
+
+CSS Files
+    Licensed under MIT
+    https://github.com/twbs/bootstrap/
+
+
+
+-------------------------------------------
+Fonts
+    Font Awesome: MIT and GPL licenses
+    http://fontawesome.io/license/
+
+    Roboto
+    https://fonts.googleapis.com/css?family=Roboto
+    Apache License, version 2.0
+
+
+-------------------------------------------
+Images
+    http://pixabay.com/en/sunset-afterglow-landscape-208771/
+    https://unsplash.com/photos/tAKXap853rY/
+
+---------------------------------------------
+
 == Frequently Asked Questions ==
 
 = Does this theme support any plugins? =
 
-starterblue includes support for Infinite Scroll in Jetpack.
+starter_blue includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

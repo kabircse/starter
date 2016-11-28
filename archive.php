@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package starterblue
+ * @package starter_blue
  */
 
 get_header(); ?>
@@ -12,7 +12,12 @@ get_header(); ?>
  <div class="container">
 	 <div class="row">
 			 <div class="container">
-				 <h4>Archives:<?php wp_title();?></h4>
+			<header class="page-header">
+				<?php
+					the_archive_title( '<h3 class="page-title">', '</h3>' );
+					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+				?>
+			</header><!-- .page-header -->
 				 <div class="col-md-8 col-xs-12 post-lists">
 					 <?php
 					 	if ( have_posts() ) :?>

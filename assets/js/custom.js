@@ -1,4 +1,4 @@
-$(function() {
+jQuery(document).ready(function($){
     //sidebar tab show/hide
     $('#collapse-tab a:first').tab('show');
 

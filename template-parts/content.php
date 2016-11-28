@@ -1,6 +1,6 @@
 <?php
 /**
- * @package starterblue
+ * @package starter_blue
  */
 
 ?>
@@ -39,7 +39,7 @@
 					?>
 				</div>
 				<!--footer class="entry-footer">
-					<php starterblue_entry_footer(); ?>
+					<php starter_blue_entry_footer(); ?>
 				</footer--><!-- .entry-footer -->
 		    </div>
 	  </div>

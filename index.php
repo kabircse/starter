@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package starterblue
+ * @package starter_blue
  */
 
 get_header(); ?>
@@ -17,7 +17,6 @@ get_header(); ?>
 	<div class="container">
 		<div class="row">
 				<div class="container-fluid">
-					<h4><?php wp_title();?></h4>
 					<div class="col-md-8 col-xs-12 post-lists">
 						<?php
 						if ( have_posts() ) :
@@ -49,10 +48,6 @@ get_header(); ?>
 							get_template_part( 'template-parts/content', 'none' );
 
 						endif; ?>
-						<?php if (function_exists("pagination")) {
-    						pagination($additional_loop->max_num_pages);
-							}
-						?>
 					</div><!-- #main -->
 
 					<div class="col-md-4 col-xs-12 sidebar">

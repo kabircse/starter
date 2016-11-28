@@ -6,12 +6,11 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package starterblue
+ * @package starter_blue
  */
 
 ?>
 
-<?php wp_footer(); ?>
     <hr class="featurette-divider">
     <!-- /END THE FEATURETTES -->
     <footer>
@@ -29,7 +28,7 @@
             </div>
               <div class="row">
                 <p class="pull-xs-right"><a href="#">Back to top</a></p>
-                <p>Copyright &copy; 2016 &middot; All Rights Reserved &middot; <a href="#"><?php bloginfo('name')?></a></p>
+                <p><?php _e( 'Copyright &copy; 2016 &middot; All Rights Reserved &middot','starter-blue');?> <a href="#"><?php bloginfo('name')?></a></p>
               </div>
             </div>
             <!-- /.col-lg-12 -->
@@ -38,24 +37,6 @@
     </footer>
     <!-- /FOOTER -->
 
-    <!--Script-->
-    <!-- jQuery local files, if remote not found -->
-    <script>
-        window.jQuery || document.write('<script src="<?php echo esc_url(get_template_directory_uri());?>/assets/js/jquery.min.js"><\/script>')
-    </script>
-    <!-- Jquery remote files -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <!-- Tether for Bootstrap -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script>
-    <!-- Bootstrap Script -->
-    <script src="<?php echo esc_url( get_template_directory_uri() );?>/assets/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="<?php echo esc_url( get_template_directory_uri() );?>/assets/js/ie10-viewport-bug-workaround.js"></script>
-    <script src="<?php echo esc_url( get_template_directory_uri() );?>/assets/js/modernizr.js"></script>
-    <script src="<?php echo esc_url( get_template_directory_uri() );?>/assets/js/custom.js"></script>
-    <!--Font Script For Typekit-->
-    <script src="//use.typekit.net/ckt3tvt.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
-
+  <?php wp_footer(); ?>
 </body>
 </html>

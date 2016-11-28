@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package starterblue
+ * @package starter_blue
  */
 
  get_header(); ?>

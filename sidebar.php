@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package starterblue
+ * @package starter_blue
  */
 ?>
 <aside class="sidebar-aside">
@@ -12,7 +12,7 @@
 		<form class="form-inline" action="<?php esc_url(home_url('/'))?>">
 			<div class="form-group">
 				<input type="text" class="form-control" method="get" id="search" name="s" placeholder="Search">
-				<button type="submit" class="btn btn-info search-btn">Search</button>
+				<button type="submit" class="btn btn-info search-btn"><?php _e('Search','starter-blue');?></button>
 			</div>
 		</form>
 	</div>
@@ -22,13 +22,13 @@
 	?>
 			<ul class="nav nav-tabs" id="collapse-tab">
 				<li class="nav-item">
-					<a class="nav-link active" data-toggle="tab" data-target="#popular">Popular</a>
+					<a class="nav-link active" data-toggle="tab" data-target="#popular"><?php _e('Popular','starter-blue');?></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" data-toggle="tab" data-target="#recent">Recent</a>
+					<a class="nav-link" data-toggle="tab" data-target="#recent"><?php _e('Recent','starter-blue');?></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" data-toggle="tab" data-target="#comments">Comments</a>
+					<a class="nav-link" data-toggle="tab" data-target="#comments"><?php _e('Comments','starter-blue');?></a>
 				</li>
 			</ul>
 			<div class="tab-content">

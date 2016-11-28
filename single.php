@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package starterblue
+ * @package starter_blue
  */
 
  get_header(); ?>
@@ -44,7 +44,7 @@
       															<hr/>
                                 		<?php
                                         wp_link_pages( array(
-                                  				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'starterblue' ) . '</span>',
+                                  				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'starter-blue' ) . '</span>',
                                   				'after'       => '</div>',
                                   				'link_before' => '<span>',
                                   				'link_after'  => '</span>',
@@ -52,23 +52,23 @@
                                 		?>
       														</div>
       														<div class="author-biography">
-      																		<p>Writter :: <?php the_author();?></p>
+      																		<p><?php _e('Writter','starter-blue');?> :: <?php the_author();?></p>
       																		<div class="tag pull-sm-left author-img">
       																			<img class="img img-thumbnail" src="<?php echo get_avatar_url( get_the_author_meta( 'ID' ), 32 ); ?>" alt="Card image cap">
       																		</div>
       																<div class="author-description">
       																		<p class="text-justify"><i><?php the_author_meta('description');?></i></p>
       																		<div class="author-history">
-      																				<p>Writting since:
+      																				<p><?php _e('Writting since','starter-blue');?>:
       																					<span class="tag tag-info">
       																					<?php $registered = date_i18n( "M m, Y", strtotime( get_the_author_meta( 'user_registered') ) );
       																					    echo $registered;?>
       																					</span>
       																				</p>
-      																				<p>Total Posts: <span class="tag tag-info"><?php count_user_posts(the_author_ID());?></span></p>
-      																				<p>Total Comments: <span class="tag tag-warning"><?php wp_count_comments(the_author_ID());?></span></p>
+      																				<p><?php _e('Total Posts','starter-blue');?>: <span class="tag tag-info"><?php count_user_posts(the_author_ID());?></span></p>
+      																				<p><?php _e('Total Comments','starter-blue');?>: <span class="tag tag-warning"><?php wp_count_comments(the_author_ID());?></span></p>
       																		</div>
-      																		<p>URL: <a target="_blank" href="<?php the_author_meta('url');?>"><?php the_author_meta('url');?></a></p>
+      																		<p><?php _e('URL','starter-blue');?>: <a target="_blank" href="<?php the_author_meta('url');?>"><?php the_author_meta('url');?></a></p>
       																</div>
       														</div>
       														<div class="col-sm-12 similar-post-slide">
@@ -87,7 +87,7 @@
                                                       );
                                                       $related_posts = new WP_Query($args);
                                                       if($related_posts->have_posts()){?>
-                                                        <p>Similar Post</p>
+                                                        <p><?php _e('Similar Post','starter-blue');?></p>
                                                         <?php
                                                           while ($related_posts->have_posts()) : $related_posts->the_post();
                                                               ?>
